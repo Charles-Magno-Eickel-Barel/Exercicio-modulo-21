@@ -13,8 +13,9 @@
     };
     @media  (max-width: 768px){
         background-image: url(../../dist/images/Capa/batman/batman-hero-celular.png);
+        top: 0;
     };
-    &__content{
+    &__content{ 
         max-width: 640px;
         margin: 240px 0 0 0;
     }
