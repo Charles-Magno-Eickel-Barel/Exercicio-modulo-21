@@ -1,0 +1,109 @@
+@use 'variaveis';
+
+.cast {
+    padding: 24px;
+    margin: 24px;
+    background-color: variaveis.$corDeFundoCard;
+    border-radius: 24px;
+    box-shadow: 5px 5px 20px -1px rgba(0,0,0,0.75);
+    gap: 24px;
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        padding: 0 0 10px 0;
+        gap: 10px;
+        @media  (max-width: 768px){
+            display: block;
+            &__button {
+            margin-bottom: 20px;
+            } 
+        };
+
+        &__button {
+            background:variaveis.$corDaSombraBotao;
+            border-radius: 12px;
+            border: none;
+            font-size: 20px;
+            color: variaveis.$corTextoSecundaria;
+            padding: 0;
+            outline-offset: 4px;
+            text-transform: uppercase;
+            
+            &__span {
+                display: block;
+                padding: 12px 42px;
+                border-radius: 12px;
+                background:variaveis.$corDoBotao;
+                transform: translateY(-10px);
+
+                &--is-active {                 
+                    display: block;
+                    padding: 12px 42px;
+                    border-radius: 12px;
+                    background:variaveis.$corDoBotao;
+                    transform: translateY(-1px);
+                }
+
+                &:hover {
+                    transform: translateY(-6px);
+                }
+                &:active {
+                    transform: translateY(-1px);
+                }
+            }
+        }
+    }
+
+    &__list {
+        
+        &__bloco{        
+            h3 {
+                text-align: center;
+            }
+            
+        }
+
+        &__enredo {
+            display: none;
+            &--is-active{
+                display: grid;
+                grid-template-columns: 1fr;
+                
+            }
+        }
+
+        &__elenco {
+            display: none;
+            &--is-active{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                gap: 10px;
+                @media  (max-width: 768px){
+                    grid-template-columns: 1fr 1fr;
+                };
+            }
+        }
+
+        &__producao {
+            display: none;
+            &--is-active{
+                display: grid;
+                grid-template-columns: 1fr;
+                
+            }
+        }
+
+        &__actor {
+            
+            img {
+                max-width: 100%;
+                width: 230px;
+                height: 280px;
+                object-fit: cover;
+                border-radius: 24px;
+            }
+            
+        }
+    }
+}

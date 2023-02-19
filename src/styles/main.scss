@@ -1,0 +1,90 @@
+@use 'variaveis';
+@use 'hero';
+@use 'sinopse';
+@use 'cast';
+@use 'curiosidades';
+@use 'footer';
+@use 'header';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+}
+
+body {
+    background-color: variaveis.$corDeFundo
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTextoPrincipal
+}
+
+@mixin title($fontSize: 40px) {
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundaria;
+}
+
+.title {
+    @include title(30px);
+}
+
+.title--big {
+    @include title(44px);
+}
+
+.text {
+    @include text;
+}
+
+.text--small {
+    @include text(15px);
+    font-weight: bold;
+}
+
+
+
+.button  {
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 60px;
+    font-size: 18px;
+    color: variaveis.$corTextoPrincipal;
+    background-color:variaveis.$corDeFundo;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$corDeFundo;
+    align-items: center;
+    margin: 100px;
+    &:hover {
+        background-color: lighten(variaveis.$corDeFundo, 20%);
+    }
+
+    &--secundary {
+        background-color: variaveis.$corDeFundoBotaoSecundario;
+        border-color: variaveis.$corDeFundoBotaoSecundario;
+
+        &:hover {
+            background-color: lighten(variaveis.$corDeFundoBotaoSecundario, 3%);
+        }
+    }
+
+    &--dark {
+        background-color:  rgba(variaveis.$corDeFundoDark,0.8);
+        border-color: variaveis.$corTextoSecundaria;
+
+        &:hover {
+            background-color:variaveis.$corTextoSecundaria;
+            color: variaveis.$corDeFundo;
+        }
+    }
+}
